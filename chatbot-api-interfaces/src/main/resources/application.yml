@@ -3,4 +3,5 @@ server:
 chatbot-api:
   groupId: 28885518425541
   cookie: zsxq_access_token=EFFD7A8C-8CD8-4A69-8000-933104A13EEF_065D2A877510D2E5; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%22814885515558842%22%2C%22first_id%22%3A%2219d811f78fad3-06852982006be0c-26061f51-1350728-19d811f78fb85d%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%2C%22%24latest_referrer%22%3A%22%22%7D%2C%22identities%22%3A%22eyIkaWRlbnRpdHlfY29va2llX2lkIjoiMTlkODExZjc4ZmFkMy0wNjg1Mjk4MjAwNmJlMGMtMjYwNjFmNTEtMTM1MDcyOC0xOWQ4MTFmNzhmYjg1ZCIsIiRpZGVudGl0eV9sb2dpbl9pZCI6IjgxNDg4NTUxNTU1ODg0MiJ9%22%2C%22history_login_id%22%3A%7B%22name%22%3A%22%24identity_login_id%22%2C%22value%22%3A%22814885515558842%22%7D%2C%22%24device_id%22%3A%2219d9c2b09a0bbc-01a9550d6a1f52f-26061f51-1350728-19d9c2b09a1f4e%22%7D; abtest_env=product
-  openAiKey: ms-34750a15-3966-4ba6-b840-85cfe3ea7449
+  modelScopeKey: ms-34750a15-3966-4ba6-b840-85cfe3ea7449
+  openRouterKey: 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

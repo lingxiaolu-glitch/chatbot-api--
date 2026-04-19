@@ -7,7 +7,9 @@ import java.io.IOException;
  * @description ModelScope ai 接口 https://www.modelscope.cn/docs/model-service/API-Inference/intro
  * @github https://github.com/lingxiaolu-glitch
  **/
-public interface IModelScopeAI {
+public interface IEveryThingAI {
 
     String doModelScope(String question) throws IOException;
+
+    String doOpenRouter(String question) throws IOException;
 }

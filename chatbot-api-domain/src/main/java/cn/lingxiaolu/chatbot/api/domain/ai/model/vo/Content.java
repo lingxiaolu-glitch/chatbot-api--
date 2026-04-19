@@ -14,6 +14,8 @@ public class Content {
 
     private String type;
 
+    private List<Object> logprobs;
+
     public void setAnnotations(List<String> annotations){
         this.annotations = annotations;
     }
@@ -31,5 +33,11 @@ public class Content {
     }
     public String getType(){
         return this.type;
+    }
+    public void setLogprobs(List<Object> logprobs){
+        this.logprobs = logprobs;
+    }
+    public List<Object> getLogprobs(){
+        return this.logprobs;
     }
 }

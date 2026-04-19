@@ -10,7 +10,7 @@ import java.util.List;
  * @description AI响应聚合根
  * @github https://github.com/lingxiaolu-glitch
  **/
-public class AIAnswer {
+public class ModelScopeAnswer {
     private long created_at;
 
     private String id;

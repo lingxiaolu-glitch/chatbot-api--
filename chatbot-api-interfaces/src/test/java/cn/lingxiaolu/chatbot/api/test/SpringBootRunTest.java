@@ -1,6 +1,6 @@
 package cn.lingxiaolu.chatbot.api.test;
 
-import cn.lingxiaolu.chatbot.api.domain.ai.IModelScopeAI;
+import cn.lingxiaolu.chatbot.api.domain.ai.IEveryThingAI;
 import cn.lingxiaolu.chatbot.api.domain.zsxq.IZsxqApi;
 import cn.lingxiaolu.chatbot.api.domain.zsxq.model.aggregates.UnAnsweredQuestionAggregates;
 import cn.lingxiaolu.chatbot.api.domain.zsxq.model.vo.Topics;
@@ -37,7 +37,7 @@ public class SpringBootRunTest {
     private IZsxqApi zsxqApi;
 
     @Resource
-    private IModelScopeAI modelScopeAI;
+    private IEveryThingAI everyThingAI;
 
     @Test
     public void test_zsxqApi() throws IOException {
@@ -57,7 +57,13 @@ public class SpringBootRunTest {
 
     @Test
     public void test_modelScope() throws IOException {
-        String answer = modelScopeAI.doModelScope("今天天气怎么样");
+        String answer = everyThingAI.doModelScope("今天天气怎么样");
+        logger.info("测试结果:{}" , answer);
+    }
+
+    @Test
+    public void test_openRouter() throws IOException {
+        String answer = everyThingAI.doOpenRouter("今天天气怎么样");
         logger.info("测试结果:{}" , answer);
     }
 }

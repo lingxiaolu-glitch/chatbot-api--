@@ -16,6 +16,8 @@ public class Output {
 
     private List<Content> content;
 
+    private List<ReasoningContent> reasoningContent;
+
     private String role;
 
     private String status;
@@ -43,6 +45,12 @@ public class Output {
     }
     public List<Content> getContent(){
         return this.content;
+    }
+    public void setReasoningContent(List<ReasoningContent> reasoningContent){
+        this.reasoningContent = reasoningContent;
+    }
+    public List<ReasoningContent> getReasoningContent(){
+        return this.reasoningContent;
     }
     public void setRole(String role){
         this.role = role;

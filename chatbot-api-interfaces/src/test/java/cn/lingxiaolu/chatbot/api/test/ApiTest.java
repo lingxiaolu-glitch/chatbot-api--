@@ -86,4 +86,30 @@ public class ApiTest {
             System.out.println("服务器返回错误代码：{},错误信息：{}" + response.getStatusLine().getStatusCode() + res);
         }
     }
+
+    @Test
+    public void test_openRouter() throws IOException {
+        CloseableHttpClient httpClient = HttpClientBuilder.create().build();
+
+        HttpPost httpPost = new HttpPost("https://openrouter.ai/api/v1/responses");
+        httpPost.setHeader("content-type","application/json");
+        httpPost.setHeader("Authorization","Bearer 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");
+
+        String paramJson = "{\n" +
+                "    \"model\": \"nvidia/nemotron-3-super-120b-a12b:free\",\n" +
+                "    \"input\": \"用java程序写一个冒泡排序算法\"\n" +
+                "  }";
+
+        StringEntity stringEntity = new StringEntity(paramJson,ContentType.create("text/json","UTF-8"));
+        httpPost.setEntity(stringEntity);
+
+        CloseableHttpResponse response = httpClient.execute(httpPost);
+        if(response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+            String res = EntityUtils.toString(response.getEntity(),"UTF-8");
+            System.out.println(res);
+        } else {
+            String res = EntityUtils.toString(response.getEntity(),"UTF-8");
+            System.out.println("服务器返回错误代码：{},错误信息：{}" + response.getStatusLine().getStatusCode() + res);
+        }
+    }
 }
