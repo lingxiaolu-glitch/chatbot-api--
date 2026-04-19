@@ -59,7 +59,31 @@ public class ApiTest {
         } else {
             System.out.println(response.getStatusLine().getStatusCode());
         }
+    }
 
+    @Test
+    public void test_modelScope() throws IOException {
+        CloseableHttpClient httpClient = HttpClientBuilder.create().build();
 
+        HttpPost httpPost = new HttpPost("https://api-inference.modelscope.cn/v1/responses");
+        httpPost.setHeader("content-type","application/json");
+        httpPost.setHeader("Authorization","Bearer ms-34750a15-3966-4ba6-b840-85cfe3ea7449");
+
+        String paramJson = "{\n" +
+                "    \"model\": \"Qwen/Qwen3.5-27B\",\n" +
+                "    \"input\": \"用java程序写一个冒泡排序算法\"\n" +
+                "  }";
+
+        StringEntity stringEntity = new StringEntity(paramJson,ContentType.create("text/json","UTF-8"));
+        httpPost.setEntity(stringEntity);
+
+        CloseableHttpResponse response = httpClient.execute(httpPost);
+        if(response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+            String res = EntityUtils.toString(response.getEntity(),"UTF-8");
+            System.out.println(res);
+        } else {
+            String res = EntityUtils.toString(response.getEntity(),"UTF-8");
+            System.out.println("服务器返回错误代码：{},错误信息：{}" + response.getStatusLine().getStatusCode() + res);
+        }
     }
 }
